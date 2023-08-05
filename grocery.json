@@ -1,0 +1,183 @@
+[
+    {
+      "id": "C2-00",
+      "name": "Mustard seeds",
+      "price": "$8",
+      "unit": "150 gms",
+      "image": "http://img1.exportersindia.com/product_images/bc-small/dir_54/1611062/mustard-seeds-1208829.jpg"
+    },
+    {
+      "id": "C2-01",
+      "name": "Pepper",
+      "price": "$1.25",
+      "unit": "100 gms",
+      "image": "http://img1.exportersindia.com/product_images/bc-small/dir_23/674664/black-pepper-seed-1680115.jpg"
+    },
+    {
+      "id": "C2-02",
+      "name": "Cumin seeds/jeera",
+      "price": "$18",
+      "unit": "100 gms",
+      "image": "http://puritytest.in/public/img/product_images/jeera1_1_1.jpg"
+    },
+    {
+      "id": "C2-03",
+      "name": "Poppy seeds/Khus khus",
+      "price": "$24",
+      "unit": "100 gms",
+      "image": "http://img1.exportersindia.com/product_images/bc-small/dir_113/3382222/2-khas-khas-poppy-seeds-2203115.jpg"
+    },
+  {
+      "id": "C2-04",
+      "name": "Coriander seeds/Dhania",
+      "price": "$18",
+      "unit": "100 gms",
+      "image": "http://img1.exportersindia.com/product_images/bc-small/dir_105/3122483/watermark/eagle-coriander-seeds-1201536.jpg"
+    },{
+      "id": "C2-05",
+      "name": "Fennel seeds",
+      "price": "$22",
+      "unit": "50 gms",
+      "image": "http://img1.exportersindia.com/product_images/bc-small/dir_115/3440565/fennel-seeds-1693027.jpg"
+    },{
+      "id": "C2-06",
+      "name": "Dry ginger piece or powder",
+      "price": "$13",
+      "unit": "100 gms",
+      "image": "http://img1.exportersindia.com/product_images/bc-small/dir_62/1835594/ginger-powder-677521.jpg"
+    },{
+      "id": "C2-07",
+      "name": "Black or white sesame seeds",
+      "price": "$45",
+      "unit": "100 gms",
+      "image": "http://img1.exportersindia.com/product_images/bc-small/dir_105/3144460/sesame-seeds-1947019.jpg"
+    },{
+      "id": "C2-08",
+      "name": "Ajwain",
+      "price": "$26",
+      "unit": "100 gms",
+      "image": "https://4.imimg.com/data4/HJ/KJ/MY-22994316/ajwain-250x250.jpeg"
+    },{
+      "id": "C2-09",
+      "name": "Hing/Asafetida",
+      "price": "$18",
+      "unit": "1 box (Big)",
+      "image": "http://3.imimg.com/data3/RG/SE/MY-16380257/4-250x250.jpg"
+    },
+      {
+        "id": "C1-10",
+        "name": "apples",
+        "price": "$1.99",
+        "unit": "per pound",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB2e1V4FAbgF9jyNOUoJHbY8Spoz5SyUGbXw&usqp=CAU"
+      },
+      {
+        "id": "C1-11",
+        "name": "bananas",
+        "price": "$0.99",
+        "unit": "per pound",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyEUsHKHb42TRKcFNxenSI9vpUHi0ZMhD_g&usqp=CAU"
+      },
+      {
+        "id": "C1-12",
+        "name": "bread",
+        "price": "$2.49",
+        "unit": "per loaf",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNohlghXcO1mVVJ1qO_hrKP9J2dY5U5mVRbQ&usqp=CAU"
+      },
+      {
+        "id": "C1-13",
+        "name": "oranges",
+        "price": "$1.25",
+        "unit": "per pound",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxBU7uvk10D_Mjd0XKK3GYmY7CaUUdtdf-5w&usqp=CAU"
+      },
+      {
+        "id": "C1-14",
+        "name": "potatoes",
+        "price": "$0.50",
+        "unit": "per pound",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_y5bQVkv3qkUvnLualPWh_2JgUZjp_fWTTZ4t6FVf0cSTbTzAy-9ZS3bCmAaROhUXXc&usqp=CAU"
+      },
+      {
+        "id": "C1-15",
+        "name": "milk",
+        "price": "$2.99",
+        "unit": "per gallon",
+        "image": "data:image/jpeg;base64,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"
+      },
+      {
+        "id": "C2-16",
+        "name": "Mustard seeds",
+        "price": "$80",
+            "unit": "150 gms",
+        "image": "http://img1.exportersindia.com/product_images/bc-small/dir_54/1611062/mustard-seeds-1208829.jpg"
+      },
+
+      {
+        "id": "C2-18",
+        "name": "cereal",
+        "price": "$3.75",
+        "unit": "per box",
+        "image": "https://www.healthkart.com/connect/wp-content/uploads/2017/04/banner-64.jpg"
+      },
+      {
+        "id": "C2-19",
+        "name": "eggs",
+        "price": "$2.25",
+        "unit": "dozen",
+        "image": "https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/article_1200_800_fallback/public/2021-06/brown-and-white-eggs%C2%A9iStock.jpg?itok=Dt1lYMNx"
+      },
+      {
+        "id": "C2-20",
+        "name": "cheese",
+        "price": "$4.50",
+        "unit": "per pound",
+        "image": "https://www.tastingtable.com/img/gallery/the-origins-of-swiss-cheese/intro-1667250377.jpg"
+      },
+      {
+        "id": "C2-21",
+        "name": "chicken",
+        "price": "$6.99",
+        "unit": "per pound",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCxk0RWKU_d1vPZS0vAXXCTLEkk9jcVpU0fzNh2-wS01pZOwWPZZurBRYMWNa2hyUUgTA&usqp=CAU"
+      },
+      {
+        "id": "C2-22",
+        "name": "rice",
+        "price": "$1.50",
+        "unit": "per pound",
+        "image": "https://slurrp.club/wp-content/uploads/2022/04/DSC_0286-2-2-750x481.jpg"
+      },
+      {
+        "id": "C2-23",
+        "name": "pasta",
+        "price": "$2.00",
+        "unit": "per pound",
+        "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/02/05/Baked-Feta-Pasta-4_s4x3.jpg.rend.hgtvcom.616.493.suffix/1615916524567.jpeg"
+      },
+      {
+        "id": "C2-25",
+        "name": "tomatoes",
+        "price": "$0.75",
+        "unit": "per pound",
+        "image": "https://images-prod.healthline.com/hlcmsresource/images/AN_images/tomatoes-1296x728-feature.jpg"
+      },
+      {
+        "id": "C2-26",
+        "name": "onions",
+        "price": "$0.50",
+        "unit": "per pound",
+        "image": "https://plantix.net/en/library/assets/custom/crop-images/onion.jpeg"
+      },
+      {
+        "id": "C2-27",
+        "name": "carrots",
+        "price": "$0.8",
+        "unit": "per pound",
+        "image": "https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2021/04/23175719/shutterstock_440493100-1.jpg"
+      }
+
+
+
+  ]

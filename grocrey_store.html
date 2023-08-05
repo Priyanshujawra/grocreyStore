@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      /* display: none; */
+      min-height: 100vh;
+      background-color: #f9f9f900;
+    }
+
+    .cart-container {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      width: 80%;
+      overflow: scroll;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .home {
+      display: flex;
+      flex-direction: column;
+      background-image: url(https://themepanthers.com/wp/nest/d2/wp-content/uploads/2022/05/slider-6-min.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      align-items: center;
+      width: 100%;
+      padding: 4rem 0rem;
+    }
+
+    .search_content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+    }
+
+    #searchInput {
+      padding: 10px;
+      width: 370px;
+      border: 1px solid #ddd;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+
+    #searchButton {
+      padding: 10px 20px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      color: #fff;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .r {
+      display: flex;
+      width: 100%;
+
+      justify-content: center;
+    }
+    #results {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .grocery-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 10px;
+      width: 270px;
+      height: fit-content;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .card button{
+     margin-right: 1rem;
+      width: auto;
+      height: fit-content;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .card button:hover {
+      background-color: #29b9b8;
+      transform: scale(1.05);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #007bff;
+    }
+
+    .card p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+
+    .card span {
+      font-weight: bold;
+      color: #555;
+    }
+
+    .hill {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card img {
+      display: block;
+      width: 100%;
+      height: 165px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0; /* Rounded corners for the top of the image */
+    }
+    #imag {
+      width: 53px;
+      height: auto;
+    }
+    .him {
+      color: red;
+    }
+    .landingpage-content {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      padding: 30px;
+      margin-top: 3rem;
+    }
+    .landingpage-content h1 {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    .landingpage-content p {
+      padding: 0.5rem;
+      width: 72%;
+    }
+
+    header {
+      background-color: #007bff;
+      padding: 10px 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: #fff;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .product-content h1 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      padding: 2rem;
+    }
+    .add-item {
+      background: #f59e8d;
+      border: none;
+      width: 100px;
+      height: 40px;
+      /* margin-top:1rem; */
+      cursor: pointer;
+      outline: none !important;
+    }
+
+    .meassage {
+      display: none;
+    }
+    .meassagetamplate {
+      background-color: #007bff;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      width: 360px;
+      flex-direction: column;
+      height: 185px;
+      z-index: 1;
+      position: fixed;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      border-radius: 8px;
+    }
+    #remove {
+      background-color: #dc3545;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      padding: 5px 10px;
+      cursor: pointer;
+      outline: none;
+      transition: background-color 0.3s ease;
+    }
+
+    #remove:hover {
+      background-color: #c82333;
+    }
+    .style {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      align-items: center;
+      padding: 0.5rem;
+    }
+    .tag {
+      margin-top: 0.5rem;
+      background-color: #dc3545;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      padding: 5px 10px;
+      cursor: pointer;
+      outline: none;
+      transition: background-color 0.3s ease;
+    }
+    .tag button {
+      background-color: #dc3545;
+      border: none;
+    }
+    #confirmation-message p {
+      margin: auto;
+    }
+    #confirmation-message {
+      display: flex;
+      width: 66%;
+      /* justify-content: space-around; */
+    }
+    #confirmation-message img {
+      width: 90px;
+      height: 50px;
+      border-radius: 11px;
+    }
+    .cartckickcontainer {
+      display: none;
+    }
+    #cart_content {
+      display: flex;
+    }
+    #cart_content div {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    #cart_content div button {
+      width: auto;
+      height: fit-content;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    #cart_content div button:hover {
+      background-color: #29b9b8;
+      transform: scale(1.05);
+    }
+    #cart-list {
+      overflow-y: scroll;
+      height: 500px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+#cart-item{
+  width: 100%;
+    background-size: cover;
+    height: 175px;
+  background-image: url('background-pattern.svg');
+}
+
+footer {
+
+    padding: 12px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #0099ff;
+    color: white;
+    align-items: center;
+    background-size: 20px 20px;
+}
+
+.footer-content {
+    flex: 1;
+    max-width: 300px;
+    margin: 10px;
+}
+
+h3 {
+
+    margin-bottom: 10px;
+}
+
+p {
+
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #f9f9f9;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+    }
+    .footer-content {
+        max-width: 100%;
+    }
+}
+
+  </style>
+  <body>
+    <div class="container cartckickcontainer" id="removeclass">
+      <div class="cart-container" id="cart-container">
+        <div id="cart_content">
+          <div><h2>Your Cart</h2></div>
+          <div><button id="cancelbtn">Cancel</button></div>
+        </div>
+        <ul id="cart-list"></ul>
+      </div>
+    </div>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img
+            src="https://media.istockphoto.com/id/1205419959/vector/vegetables-on-shopping-cart-trolley-grocery-logo-icon-design-vector.jpg?s=612x612&w=0&k=20&c=HgCTmq-4R0-MvKIGrSFJcifqqoJIcducRZBVTO4V5TU="
+            alt="Logo"
+          />
+          <h1>Market Basket</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#results">Products</a></li>
+          <li id="cart-show"><a href="#cart-container">Cart</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="home">
+      <div class="meassage">
+        <div class="style">
+          <span style="color: #fff">Welcome To Market Basket!</span>
+          <button id="remove">remove</button>
+        </div>
+        <div id="set" style="width: 80%; text-align: center">
+          <div style="padding: 0.5rem">
+            <span
+              style="background-color: green; border-radius: 50%; color: #ddd"
+              >&#10003;</span
+            ><label> added to cart!</label>
+          </div>
+          <div id="confirmation-message"></div>
+        </div>
+
+        <div class="tag">
+          <label id="showcart" href=""><button>Go To Cart</button></label>
+        </div>
+      </div>
+      <div class="landingpage-content">
+        <h1>Your One-Stop Shop for Fresh and Quality Produce</h1>
+        <p>
+          Discover a wide variety of farm-fresh fruits, vegetables, and more,
+          sourced locally to ensure the highest quality.
+        </p>
+      </div>
+      <div class="search_content">
+        <input type="text" id="searchInput" placeholder="Search by make name" />
+
+        <!-- Add a button to trigger the search -->
+        <button id="searchButton">Search</button>
+      </div>
+    </div>
+    <!-- Display the filtered results -->
+    <div class="product-content">
+      <h1>Popular Products</h1>
+    </div>
+    <div class="r">
+      <div id="results"></div>
+    </div>
+
+    <div class="hill">
+      <div class="grocery-container" id="grocery-container"></div>
+      <div id="grocery-container1"></div>
+    </div>
+    <div id="cart-item"></div>
+
+    <footer>
+      <div class="footer-content">
+          <h3>Contact Us</h3>
+          <p>Email: info@example.com</p>
+          <p>Phone: +1 (123) 456-7890</p>
+      </div>
+      <div class="footer-content">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+              <a href="#"><img src="https://cdn3.iconfinder.com/data/icons/picons-social/57/46-facebook-512.png" alt="Facebook"></a>
+              <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter"></a>
+              <a href="#"><img src="https://img.freepik.com/free-vector/instagram-icon_1057-2227.jpg?w=2000" alt="Instagram"></a>
+          </div>
+      </div>
+  </footer>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const savedCartItems =
+        JSON.parse(localStorage.getItem("cartItems")) || [];
+      const cartItems = savedCartItems;
+      async function grocerydatafetch() {
+        try {
+          return (await fetch("./grocery.json")).json();
+        } catch (error) {
+          console.log(`can't find Data ${error}`);
+        }
+      }
+
+      let metmen = document.querySelector(".meassage");
+      let removetemplate = document.getElementById("remove");
+      removetemplate.addEventListener("click", () => {
+        metmen.classList.remove("meassagetamplate");
+      });
+
+      grocerydatafetch().then((data) => {
+        createGroceryCards(data, "results");
+        let additem = document.querySelectorAll(".add-item");
+        additem.forEach((set) => {
+          set.addEventListener("click", function (e) {
+            // createGroceryCards(data, "cart-item");
+            const itemId = e.target.dataset.itemId;
+            const selectedItem = data.find((item) => item.id === itemId);
+            if (selectedItem) {
+              metmen.classList.add("meassagetamplate");
+              addToCart(selectedItem);
+              updateCartList();
+              showConfirmationMessage(selectedItem.name, selectedItem.image);
+            }
+          });
+        });
+      });
+      function updateCartList() {
+        const cartList = document.getElementById("cart-list");
+        cartList.innerHTML = ""; // Clear existing cart items
+        cartItems.forEach((item) => {
+          const card = document.createElement("div");
+          card.classList.add("card");
+          const itemImage = document.createElement("img");
+          itemImage.src = item.image;
+
+          const itemName = document.createElement("h2");
+          itemName.textContent = item.name;
+
+          const itemId = document.createElement("p");
+          itemId.innerHTML = "<span>ID:</span> " + item.id;
+
+          const itemunit = document.createElement("p");
+          itemunit.innerHTML = "<span>Quantity:</span> " + item.unit;
+
+          const itemPrice = document.createElement("p");
+          itemPrice.innerHTML = "<span>Price:</span> " + item.price;
+
+          // const addcartbutton = document.createElement("button");
+          // addcartbutton.innerHTML = "Add To Cart";
+          // addcartbutton.classList.add("add-item");
+          // addcartbutton.dataset.itemId = item.id;
+          card.appendChild(itemImage);
+          card.appendChild(itemName);
+          card.appendChild(itemId);
+          card.appendChild(itemunit);
+          card.appendChild(itemPrice);
+
+          cartList.appendChild(card);
+          const deleteButton = document.createElement("button");
+          deleteButton.textContent = "Delete";
+          const buyButton = document.createElement("button");
+          buyButton.textContent = "Buy Item";
+          deleteButton.addEventListener("click", () => removeFromCart(item.id));
+          card.appendChild(deleteButton);
+          card.appendChild(buyButton);
+          cartList.appendChild(card);
+        });
+      }
+      updateCartList();
+      function addToCart(item) {
+        cartItems.push(item);
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        updateCartList();
+      }
+      function removeFromCart(itemId) {
+        const index = cartItems.findIndex((item) => item.id === itemId);
+        if (index !== -1) {
+          cartItems.splice(index, 1);
+          localStorage.setItem("cartItems", JSON.stringify(cartItems));
+          updateCartList(); // Update cart list in the DOM
+        }
+      }
+      function showConfirmationMessage(itemName, image) {
+        const confirmationMessage = document.getElementById(
+          "confirmation-message"
+        );
+        confirmationMessage.innerHTML = `<img src="${image}"> <p>${itemName} </p>`;
+      }
+      function createGroceryCards(Data, containerid) {
+        const container = document.getElementById(containerid);
+        container.innerHTML = "";
+        Data.forEach((item) => {
+          const card = document.createElement("div");
+          card.classList.add("card");
+          const itemImage = document.createElement("img");
+          itemImage.src = item.image;
+
+          const itemName = document.createElement("h2");
+          itemName.textContent = item.name;
+
+          const itemId = document.createElement("p");
+          itemId.innerHTML = "<span>ID:</span> " + item.id;
+
+          const itemunit = document.createElement("p");
+          itemunit.innerHTML = "<span>Quantity:</span> " + item.unit;
+
+          const itemPrice = document.createElement("p");
+          itemPrice.innerHTML = "<span>Price:</span> " + item.price;
+
+          const addcartbutton = document.createElement("button");
+          addcartbutton.innerHTML = "Add To Cart";
+          addcartbutton.classList.add("add-item");
+          addcartbutton.dataset.itemId = item.id;
+          card.appendChild(itemImage);
+          card.appendChild(itemName);
+          card.appendChild(itemId);
+          card.appendChild(itemunit);
+          card.appendChild(itemPrice);
+          card.appendChild(addcartbutton);
+
+          container.appendChild(card);
+        });
+      }
+      const result_show = document.getElementById("results");
+      function handleSearch() {
+        const searchInput = document.getElementById("searchInput");
+        const searchTerm = searchInput.value.toLowerCase();
+        grocerydatafetch().then((data) => {
+          const filteredData = data.filter((item) =>
+            item.name.toLowerCase().includes(searchTerm)
+          );
+          // createGroceryCards(groceryData, "grocery-container");
+          createGroceryCards(filteredData, "results");
+        });
+      }
+      // Call the function to create and display grocery cards
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", handleSearch);
+
+      let cartshow = document.getElementById("cart-show");
+      let removeclass = document.getElementById("removeclass");
+      let cartmessageshow = document.getElementById("showcart");
+      let cancelbtn = document.getElementById("cancelbtn");
+
+      function buttonClickHandler(event) {
+        removeclass.classList.remove("cartckickcontainer");
+      }
+      function buttonClickHandlerremove(event) {
+        removeclass.classList.add("cartckickcontainer");
+      }
+
+      cartshow.addEventListener("click", buttonClickHandler);
+      cartmessageshow.addEventListener("click", buttonClickHandler);
+      cancelbtn.addEventListener("click", buttonClickHandlerremove);
+    });
+  </script>
+</html>
